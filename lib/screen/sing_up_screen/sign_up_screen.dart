@@ -21,6 +21,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () => Navigator.pop(context),
+          icon: const Icon(
+            Icons.arrow_back,
+            color: AppColors.normalActive,
+          ),
+        ),
         backgroundColor: Colors.white,
         elevation: 0,
       ),
@@ -84,8 +91,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
               const SizedBox(height: 60),
               MainButton(
                 function: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => const Questions()));
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const Questions(),
+                    ),
+                  );
                 },
                 text: "إنشاء حساب",
                 buttonColor: AppColors.normalActive,
@@ -138,7 +149,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                     TextButton(
                       onPressed: () {
-                        Navigator.pop(
+                        Navigator.push(
                             context,
                             MaterialPageRoute(
                               builder: (context) => const LoginScreen(),

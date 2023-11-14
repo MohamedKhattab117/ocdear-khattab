@@ -4,7 +4,7 @@ import 'package:ocdear/components/google_button.dart';
 import 'package:ocdear/components/main_button.dart';
 import 'package:ocdear/components/main_logo.dart';
 import 'package:ocdear/screen/login_screens/forget_password.dart';
-import 'package:ocdear/screen/home_screen/home_page.dart';
+import 'package:ocdear/screen/questions_screens/questions.dart';
 
 import 'package:ocdear/screen/sing_up_screen/sign_up_screen.dart';
 
@@ -23,6 +23,13 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () => Navigator.pop(context),
+          icon: const Icon(
+            Icons.arrow_back,
+            color: AppColors.normalActive,
+          ),
+        ),
         backgroundColor: Colors.white,
         elevation: 0,
       ),
@@ -85,8 +92,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 buttonColor: AppColors.normalActive,
                 textColor: Colors.white,
                 function: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => const HomePage()));
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const Questions(),
+                    ),
+                  );
                 },
               ),
               const SizedBox(height: 40),

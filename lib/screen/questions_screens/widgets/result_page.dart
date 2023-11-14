@@ -12,49 +12,62 @@ class ResultPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              // Image.asset(
-              //   "assets/images/questions_result/Vector.png",
-              // ),
-              Text(
-                endResult,
-                textAlign: TextAlign.center,
-                style:
-                    const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 16),
-              Directionality(
-                textDirection: TextDirection.rtl,
-                child: Text(
-                  resultText,
-                  style: const TextStyle(
-                    fontSize: 16,
-                    color: AppColors.greyColor,
-                  ),
+      appBar: AppBar(
+        leading: IconButton(
+          onPressed: () => Navigator.pop(context),
+          icon: const Icon(
+            Icons.arrow_back,
+            color: AppColors.normalActive,
+          ),
+        ),
+        backgroundColor: Colors.white,
+        elevation: 0,
+      ),
+      body: Center(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                // Image.asset(
+                //   "assets/images/questions_result/Vector.png",
+                // ),
+                Text(
+                  endResult,
                   textAlign: TextAlign.center,
+                  style: const TextStyle(
+                      fontSize: 20, fontWeight: FontWeight.bold),
                 ),
-              ),
-              const SizedBox(height: 60),
-              MainButton(
-                text: "لنبدأ رحلتنا",
-                textColor: Colors.white,
-                buttonColor: AppColors.normalActive,
-                function: () {
-                  Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const AvatarScreen()),
-                    (route) => false,
-                  );
-                },
-              ),
-            ],
+                const SizedBox(height: 16),
+                Directionality(
+                  textDirection: TextDirection.rtl,
+                  child: Text(
+                    resultText,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      color: AppColors.greyColor,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                const SizedBox(height: 60),
+                MainButton(
+                  text: "لنبدأ رحلتنا",
+                  textColor: Colors.white,
+                  buttonColor: AppColors.normalActive,
+                  function: () {
+                    Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const AvatarScreen()),
+                      (route) => false,
+                    );
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),

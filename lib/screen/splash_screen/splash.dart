@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:ocdear/screen/questions_screens/questions.dart';
+import 'package:ocdear/screen/onboarding_screen/onboarding.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -19,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen>
     Future.delayed(const Duration(seconds: 3), () {
       Navigator.of(context).pushReplacement(MaterialPageRoute(
         builder: (_) =>
-            (const Questions()), // حط الاسكرين اللي عايز تظهرها بعد الاسبلاش هنا
+            (const OnboardingScreen()), // حط الاسكرين اللي عايز تظهرها بعد الاسبلاش هنا
       ));
     });
   }

@@ -14,6 +14,13 @@ class NewPassword extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () => Navigator.pop(context),
+          icon: const Icon(
+            Icons.arrow_back,
+            color: AppColors.normalActive,
+          ),
+        ),
         backgroundColor: Colors.white,
         elevation: 0,
       ),
@@ -47,10 +54,11 @@ class NewPassword extends StatelessWidget {
                 MainButton(
                   function: () {
                     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const Questions(),
-                        ));
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Questions(),
+                      ),
+                    );
                   },
                   text: "تأكيد",
                   buttonColor: AppColors.normalActive,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ocdear/components/main_logo.dart';
 import 'package:ocdear/screen/questions_screens/widgets/quiz_screen.dart';
+import 'package:ocdear/utils/colors.dart';
 
 import 'package:ocdear/utils/text_style.dart';
 
@@ -11,6 +12,13 @@ class Questions extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () => Navigator.pop(context),
+          icon: const Icon(
+            Icons.arrow_back,
+            color: AppColors.normalActive,
+          ),
+        ),
         backgroundColor: Colors.white,
         elevation: 0,
       ),
